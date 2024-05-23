@@ -1,0 +1,10 @@
+services:
+    tileserver:
+        container_name: tileserver
+        volumes:
+          - ./:/data
+          - "./fonts/Noto\ Sans\ Regular:/usr/src/app/node_modules/tileserver-gl-styles/fonts/Noto\ Sans\ Regular"
+        image: maptiler/tileserver-gl:v4.11.1
+        command: ["--file", "osm-2020-02-10-v3.11_iran_tehran.mbtiles"]
+        ports:
+          - 8079:8080
